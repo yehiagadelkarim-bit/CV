@@ -4,15 +4,36 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Yehia Ahmed Gad El-Karim</title>
-<meta name="description" content="Senior sports editor and digital content creator — 15+ years across Saudi and Egyptian media platforms. Work, platforms and programs.">
-<meta property="og:title" content="Yehia Ahmed Gad El-Karim — Senior Digital Content Creator &amp; Editor">
+<meta name="description" content="Senior sports editor and digital content creator with 15+ years across Saudi and Egyptian media platforms. Work, platforms and programs.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#E7EAE6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0C120F" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Yehia Ahmed Gad El-Karim | Senior Digital Content Creator &amp; Editor">
 <meta property="og:description" content="15+ years of sports editorial across Saudi Sport, Sabq, Hashtag KSA, Alelm, Al Watan and more.">
 <meta property="og:type" content="profile">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230B6E4F'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Arial,Helvetica,sans-serif' font-weight='700' font-size='30' fill='%23F3F5F2'%3EYG%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Yehia Ahmed Gad El-Karim",
+  "alternateName": "يحيى أحمد جاد الكريم",
+  "jobTitle": "Senior Digital Content Creator & Editor",
+  "worksFor": { "@type": "Organization", "name": "Trend DC for Digital Media", "url": "https://trenddc.com" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Cairo", "addressCountry": "EG" },
+  "email": "mailto:yehiagadelkarim@outlook.com",
+  "telephone": "+201283570047",
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Benha University" },
+  "knowsLanguage": ["ar", "en"]
+}
+</script>
 <style>
 /* ============ TOKENS ============ */
+/* Type: Schibsted Grotesk was drawn for a news-media group and Newsreader for
+   on-screen news reading, which suits a sports editor's CV. Plex covers Arabic and figures. */
 :root{
   color-scheme: light;
   --paper:#E7EAE6;
@@ -20,22 +41,30 @@
   --surface-2:#DDE2DC;
   --ink:#0F1512;
   --ink-2:#39433D;
-  --muted:#5B655F;
+  --muted:#56615A;
   --rule:#C3CBC3;
   --rule-strong:#8E9A92;
   --accent:#0B6E4F;
   --accent-soft:#D6E7DE;
-  --flag:#B33D0C;
-  --flag-soft:#F0DCD0;
-  --focus:#0B6E4F;
+  --on-accent:#F3F5F2;
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --grain-opacity:.05;
 
-  --f-display:"Archivo","Helvetica Neue",Arial,sans-serif;
-  --f-body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --f-display:"Schibsted Grotesk","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Newsreader",Georgia,"Times New Roman",serif;
   --f-ar:"IBM Plex Sans Arabic","Segoe UI",Tahoma,sans-serif;
   --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
 
-  --gutter:clamp(18px,5vw,64px);
-  --measure:66ch;
+  --gutter:clamp(16px,5vw,64px);
+  --measure:64ch;
+  --topbar-h:56px;
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --ease-in-out:cubic-bezier(.65,0,.35,1);
+
+  /* z-index scale */
+  --z-grain:-1;
+  --z-topbar:20;
+  --z-skip:30;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
@@ -45,14 +74,14 @@
     --surface-2:#1D2722;
     --ink:#E6EBE6;
     --ink-2:#B4BFB8;
-    --muted:#8B978F;
+    --muted:#8D9991;
     --rule:#2B3833;
-    --rule-strong:#485650;
+    --rule-strong:#56645D;
     --accent:#4FC08D;
     --accent-soft:#162B22;
-    --flag:#F0813F;
-    --flag-soft:#2E1B10;
-    --focus:#4FC08D;
+    --on-accent:#0C120F;
+    --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    --grain-opacity:.03;
   }
 }
 :root[data-theme="dark"]{
@@ -62,14 +91,14 @@
   --surface-2:#1D2722;
   --ink:#E6EBE6;
   --ink-2:#B4BFB8;
-  --muted:#8B978F;
+  --muted:#8D9991;
   --rule:#2B3833;
-  --rule-strong:#485650;
+  --rule-strong:#56645D;
   --accent:#4FC08D;
   --accent-soft:#162B22;
-  --flag:#F0813F;
-  --flag-soft:#2E1B10;
-  --focus:#4FC08D;
+  --on-accent:#0C120F;
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --grain-opacity:.03;
 }
 
 /* ============ BASE ============ */
@@ -80,264 +109,425 @@ body{
   background:var(--paper);
   color:var(--ink);
   font-family:var(--f-body);
-  font-size:17px;
-  line-height:1.62;
+  font-size:18px;
+  line-height:1.6;
+  font-optical-sizing:auto;
+  -webkit-font-smoothing:antialiased;
   padding-top:env(safe-area-inset-top,0px);
   padding-bottom:env(safe-area-inset-bottom,0px);
 }
-img{max-width:100%}
+/* Newsprint grain: fixed, non-interactive, painted once behind the content */
+body::before{
+  content:"";position:fixed;inset:0;z-index:var(--z-grain);pointer-events:none;
+  background-image:var(--grain);background-size:160px;opacity:var(--grain-opacity);
+}
+img{max-width:100%;height:auto}
 a{color:inherit}
-:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:2px}
-.ar{font-family:var(--f-ar);direction:rtl;unicode-bidi:isolate;font-feature-settings:"liga" 1}
-.wrap{max-width:1080px;margin:0 auto;padding-inline:var(--gutter)}
+p{text-wrap:pretty}
+::selection{background:var(--accent);color:var(--on-accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+main:focus{outline:none}
+.ar{font-family:var(--f-ar);font-size:.94em;font-feature-settings:"liga" 1;white-space:nowrap}
+.wrap{max-width:1200px;margin:0 auto;padding-inline:var(--gutter)}
 .mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
 
-/* ============ MASTHEAD ============ */
-.masthead{padding-block:clamp(32px,7vw,68px) 0}
-.kicker{
-  font-family:var(--f-mono);font-size:11px;letter-spacing:.20em;text-transform:uppercase;
-  color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;
+.skip{
+  position:absolute;left:var(--gutter);top:-80px;z-index:var(--z-skip);
+  background:var(--ink);color:var(--paper);padding:12px 16px;
+  font:600 15px/1 var(--f-display);text-decoration:none;
 }
-.kicker .live{color:var(--flag);display:inline-flex;align-items:center;gap:7px}
-.dot{width:7px;height:7px;border-radius:50%;background:var(--flag);flex:none}
-.nameplate{
-  font-family:var(--f-display);font-weight:700;
-  font-size:clamp(2.45rem,10.5vw,6rem);
-  line-height:.94;letter-spacing:-.033em;text-wrap:balance;
-  margin:18px 0 0;
-}
-.nameplate .ar-name{
-  display:block;font-family:var(--f-ar);font-weight:600;direction:rtl;text-align:left;
-  font-size:clamp(1.25rem,4.4vw,2.35rem);letter-spacing:0;line-height:1.35;
-  color:var(--ink-2);margin-top:10px;
-}
-.rule-double{border:0;border-top:3px solid var(--ink);border-bottom:1px solid var(--ink);height:4px;margin:22px 0 0}
-.dateline{
-  display:flex;flex-wrap:wrap;gap:10px 26px;align-items:baseline;
-  padding-block:12px;border-bottom:1px solid var(--rule);
-  font-family:var(--f-mono);font-size:12.5px;color:var(--muted);
-}
-.dateline a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule-strong);padding-bottom:1px}
-.dateline a:hover{color:var(--accent);border-color:var(--accent)}
+.skip:focus{top:12px}
 
-.standfirst{
-  display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);
-  gap:clamp(22px,4vw,52px);padding-block:clamp(26px,4vw,44px);
-  border-bottom:1px solid var(--rule);align-items:start;
+/* ============ BUTTONS & LINKS ============ */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;white-space:nowrap;
+  font:600 16px/1 var(--f-display);letter-spacing:-.005em;text-decoration:none;
+  padding:15px 20px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);
+  transition:background-color .2s var(--ease-out),border-color .2s var(--ease-out),color .2s var(--ease-out),transform .2s var(--ease-out);
 }
-.standfirst p{margin:0;font-size:clamp(1.02rem,2.1vw,1.24rem);line-height:1.6;max-width:var(--measure)}
-.standfirst p strong{font-weight:600;color:var(--ink);box-shadow:inset 0 -.42em 0 var(--accent-soft)}
-.figures{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 20px}
-.fig .n{font-family:var(--f-display);font-weight:700;font-size:clamp(1.6rem,4.2vw,2.3rem);line-height:1;letter-spacing:-.02em;color:var(--accent);font-variant-numeric:tabular-nums}
-.fig .l{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:7px;line-height:1.45}
+.btn:hover{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn:active{transform:translateY(1px)}
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn-sm{padding:10px 14px;font-size:14px}
 
-/* ============ SECTIONS ============ */
-section{padding-block:clamp(40px,6.5vw,76px);border-bottom:1px solid var(--rule)}
-.sec-head{display:flex;align-items:baseline;gap:16px;margin:0 0 6px}
-.sec-num{font-family:var(--f-mono);font-size:11px;letter-spacing:.16em;color:var(--flag);flex:none;padding-top:6px}
-h2{
-  font-family:var(--f-display);font-weight:700;letter-spacing:-.02em;
-  font-size:clamp(1.42rem,3.6vw,2.05rem);line-height:1.15;margin:0;text-wrap:balance;
-}
-.sec-sub{color:var(--muted);font-size:.95rem;margin:10px 0 0;max-width:var(--measure)}
-
-/* ============ PLATFORM CARDS ============ */
-.platforms{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:clamp(26px,4vw,38px)}
-.pf{background:var(--surface);padding:24px 22px 20px;display:flex;flex-direction:column;gap:14px}
-.pf-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
-.pf-ar{font-family:var(--f-ar);font-weight:700;direction:rtl;text-align:left;font-size:1.62rem;line-height:1.3;letter-spacing:0}
-.pf-en{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-top:4px}
-.pf-tag{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:4px 8px;white-space:nowrap;flex:none}
-.pf-note{font-size:.92rem;color:var(--ink-2);margin:0;line-height:1.55;flex:1}
-.links{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto}
+.links{display:flex;flex-wrap:wrap;gap:8px}
 .lnk{
-  font-family:var(--f-mono);font-size:11px;letter-spacing:.04em;text-decoration:none;
-  color:var(--ink-2);border:1px solid var(--rule-strong);padding:5px 9px;
-  display:inline-flex;align-items:center;gap:5px;transition:background .15s,color .15s,border-color .15s;
+  display:inline-flex;align-items:center;gap:6px;
+  font:500 14px/1 var(--f-display);color:var(--ink-2);text-decoration:none;
+  border:1px solid var(--rule-strong);padding:9px 12px;
+  transition:background-color .2s var(--ease-out),border-color .2s var(--ease-out),color .2s var(--ease-out),transform .2s var(--ease-out);
 }
-.lnk:hover{background:var(--accent);border-color:var(--accent);color:var(--paper)}
-.lnk.primary{border-color:var(--ink);color:var(--ink);font-weight:500}
-.lnk.primary:hover{background:var(--ink);color:var(--paper)}
-.lnk svg{width:11px;height:11px;flex:none}
-
-/* ============ PROGRAMS ============ */
-.programs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(18px,3vw,26px);margin-top:clamp(26px,4vw,38px)}
-.prog{border:1px solid var(--rule);border-top:3px solid var(--flag);background:var(--surface);padding:26px 24px 22px;display:flex;flex-direction:column;gap:12px}
-.prog-title{font-family:var(--f-ar);direction:rtl;font-weight:700;font-size:1.95rem;line-height:1.3;margin:0}
-.prog-meta{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--flag)}
-.prog p{margin:0;font-size:.95rem;color:var(--ink-2);line-height:1.58}
-.ep-label{font-family:var(--f-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);padding-top:6px;border-top:1px solid var(--rule);margin-top:auto}
-.prog .links{margin-top:0}
-
-/* ============ CAREER SPINE ============ */
-.spine{margin-top:clamp(28px,4vw,42px);display:flex;flex-direction:column}
-.job{display:grid;grid-template-columns:132px minmax(0,1fr);gap:0 clamp(20px,3.2vw,44px);padding-block:clamp(26px,3.6vw,38px);border-top:1px solid var(--rule)}
-.job:first-child{border-top:2px solid var(--ink)}
-.job-when{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em;color:var(--muted);line-height:1.7;padding-top:5px}
-.job-when .now{color:var(--flag);display:block;font-weight:500}
-.job-role{font-family:var(--f-display);font-weight:600;font-size:clamp(1.12rem,2.5vw,1.4rem);line-height:1.25;letter-spacing:-.012em;margin:0;text-wrap:balance}
-.job-org{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--accent);margin:9px 0 0}
-.job ul{margin:16px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px;max-width:var(--measure)}
-.job li{position:relative;padding-left:20px;font-size:.98rem;color:var(--ink-2);line-height:1.58}
-.job li::before{content:"";position:absolute;left:0;top:.66em;width:9px;height:1px;background:var(--rule-strong)}
-.job .links{margin-top:18px}
-
-/* ============ EVENTS ============ */
-.events{margin-top:clamp(24px,4vw,34px);border-top:1px solid var(--rule)}
-.ev{display:grid;grid-template-columns:96px minmax(0,1fr);gap:0 clamp(16px,3vw,32px);padding-block:16px;border-bottom:1px solid var(--rule);align-items:baseline}
-.ev-yr{font-family:var(--f-mono);font-size:11.5px;color:var(--flag);letter-spacing:.06em}
-.ev-t{margin:0;font-size:1rem;line-height:1.5}
-.ev-t span{display:block;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:5px}
-
-/* ============ SKILLS ============ */
-.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:clamp(20px,3vw,34px);margin-top:clamp(26px,4vw,36px)}
-.sk h3{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px;padding-bottom:9px;border-bottom:1px solid var(--rule)}
-.sk ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
-.sk li{font-size:.97rem;color:var(--ink-2);line-height:1.45}
-.sk li b{font-weight:600;color:var(--ink);font-family:var(--f-display);font-size:.93rem}
-
-/* ============ CONTACT ============ */
-.contact{border-bottom:0}
-.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:clamp(20px,3vw,32px);margin-top:clamp(24px,4vw,34px)}
-.cc{display:flex;flex-direction:column;gap:7px}
-.cc .l{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
-.cc a,.cc span{font-family:var(--f-display);font-weight:600;font-size:clamp(1rem,2.2vw,1.18rem);letter-spacing:-.01em;color:var(--ink);text-decoration:none;word-break:break-word}
-.cc a{border-bottom:2px solid var(--accent);padding-bottom:2px;width:fit-content}
-.cc a:hover{color:var(--accent)}
-
-footer{padding-block:30px 44px;color:var(--muted);font-family:var(--f-mono);font-size:11px;line-height:1.75;display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between;border-top:1px solid var(--rule)}
-footer p{margin:0;max-width:62ch}
-
-/* ============ RESPONSIVE ============ */
-@media (max-width:780px){
-  .standfirst{grid-template-columns:1fr}
-  .job{grid-template-columns:1fr;gap:12px}
-  .job-when{padding-top:0}
-  .job-when .now{display:inline;margin-left:8px}
-  .ev{grid-template-columns:1fr;gap:5px}
-}
-/* ============ MOTION ============ */
-@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-@keyframes ruleIn{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-@keyframes livePulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.7)}}
-@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
-/* Masthead load sequence — each element's resting state is visible,
-   so the page reads correctly even if animations never run. */
-.masthead .kicker  {animation:rise .55s .04s both cubic-bezier(.2,.7,.3,1)}
-.nameplate         {animation:rise .70s .12s both cubic-bezier(.2,.7,.3,1)}
-.nameplate .ar-name{animation:rise .70s .28s both cubic-bezier(.2,.7,.3,1)}
-.rule-double       {transform-origin:left center;animation:ruleIn .75s .36s both cubic-bezier(.65,0,.35,1)}
-.dateline          {animation:rise .60s .46s both cubic-bezier(.2,.7,.3,1)}
-.ticker            {animation:rise .60s .54s both cubic-bezier(.2,.7,.3,1)}
-.standfirst        {animation:rise .60s .60s both cubic-bezier(.2,.7,.3,1)}
-.dot{animation:livePulse 2.6s ease-in-out infinite}
-
-/* Scroll reveals — only armed once JS confirms support and motion is allowed */
-html.anim .reveal{opacity:0;transform:translateY(18px);will-change:opacity,transform}
-html.anim .reveal.in{
-  opacity:1;transform:none;
-  transition:opacity .62s cubic-bezier(.2,.7,.3,1),transform .62s cubic-bezier(.2,.7,.3,1);
-}
-
-/* ============ NEWSROOM TICKER ============ */
-.ticker{
-  overflow:hidden;border-bottom:1px solid var(--rule);padding-block:10px;
-  -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
-          mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
-}
-.ticker-track{display:flex;width:max-content;animation:tick 46s linear infinite}
-.ticker:hover .ticker-track,.ticker:focus-within .ticker-track{animation-play-state:paused}
-.ticker-seq{display:flex;align-items:center;flex:none}
-.ticker-item{
-  display:inline-flex;align-items:center;gap:16px;padding-inline:16px;white-space:nowrap;
-  font-family:var(--f-ar);font-size:13.5px;color:var(--muted);direction:rtl;
-}
-.ticker-item::after{content:"";width:3px;height:3px;border-radius:50%;background:var(--rule-strong);flex:none}
+.lnk:hover{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.lnk:active{transform:translateY(1px)}
+.lnk.primary{border-color:var(--ink);color:var(--ink);font-weight:600}
+.lnk.primary:hover{border-color:var(--accent);color:var(--on-accent)}
+.lnk.primary::after{content:"↗";font-size:.85em;line-height:1}
 
 /* ============ STICKY BAR ============ */
 .topbar{
-  position:fixed;left:0;right:0;top:0;z-index:50;
+  position:fixed;left:0;right:0;top:0;z-index:var(--z-topbar);
   background:var(--paper);border-bottom:1px solid var(--rule);
   padding-top:env(safe-area-inset-top,0px);
-  transform:translateY(-102%);transition:transform .34s cubic-bezier(.2,.7,.3,1);
+  transform:translateY(-102%);transition:transform .45s var(--ease-out);
 }
-.topbar.is-on{transform:translateY(0)}
-.topbar-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:11px}
+.topbar.is-on,.topbar:focus-within{transform:translateY(0)}
+.topbar-in{display:flex;align-items:center;gap:20px;min-height:var(--topbar-h)}
 .tb-name{
-  font-family:var(--f-display);font-weight:700;font-size:14px;letter-spacing:-.015em;
-  white-space:nowrap;flex:none;
+  font:700 15px/1 var(--f-display);letter-spacing:-.015em;
+  white-space:nowrap;flex:none;text-decoration:none;
 }
-.tb-nav{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.tb-nav{display:flex;gap:2px;margin-left:auto;min-width:0;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
 .tb-nav::-webkit-scrollbar{display:none}
 .tb-nav a{
-  font-family:var(--f-mono);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;
-  color:var(--muted);text-decoration:none;padding:6px 9px;white-space:nowrap;
-  border-bottom:2px solid transparent;transition:color .2s,border-color .2s;
+  font:500 14px/1 var(--f-display);color:var(--muted);text-decoration:none;
+  padding:10px 10px 8px;white-space:nowrap;border-bottom:2px solid transparent;
+  transition:color .2s var(--ease-out),border-color .2s var(--ease-out);
 }
 .tb-nav a:hover{color:var(--ink)}
-.tb-nav a.is-current{color:var(--accent);border-bottom-color:var(--accent)}
-section{scroll-margin-top:76px}
+.tb-nav a.is-current{color:var(--ink);border-bottom-color:var(--accent)}
+.tb-actions{display:flex;gap:8px;flex:none}
 
-/* ============ HOVER MICRO-INTERACTIONS ============ */
-.lnk{transition:background .18s,color .18s,border-color .18s,transform .18s}
-.lnk:hover{transform:translateY(-2px)}
-.lnk.primary::after{content:"↗";font-size:10px;opacity:.55;margin-left:1px}
-.pf{position:relative;transition:background .28s ease}
-.pf::before{
-  content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--accent);
-  transform:scaleX(0);transform-origin:left;transition:transform .34s cubic-bezier(.65,0,.35,1);
+/* ============ MASTHEAD ============ */
+.masthead{padding-block:clamp(40px,7vw,88px) clamp(32px,4.5vw,52px)}
+.kicker{
+  margin:0;font:500 12px/1.4 var(--f-mono);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
 }
-.pf:hover{background:var(--surface-2)}
-.pf:hover::before,.pf:focus-within::before{transform:scaleX(1)}
-.prog{transition:transform .3s cubic-bezier(.2,.7,.3,1),box-shadow .3s}
-.prog:hover{transform:translateY(-3px)}
-.job{transition:background .25s}
-.job-role{transition:color .25s}
-.job:hover .job-role{color:var(--accent)}
-.ev{transition:padding-left .25s,border-color .25s}
-.ev:hover{padding-left:8px;border-color:var(--rule-strong)}
-.fig .n{transition:transform .25s}
+.nameplate{
+  font-family:var(--f-display);font-weight:800;
+  font-size:clamp(2.85rem,10.8vw,7.25rem);
+  line-height:.92;letter-spacing:-.045em;text-wrap:balance;
+  margin:20px 0 0;
+}
+.nameplate .ar-name{
+  display:block;font-family:var(--f-ar);font-weight:600;text-align:left;
+  font-size:clamp(1.35rem,4.2vw,2.5rem);letter-spacing:0;line-height:1.35;
+  color:var(--ink-2);margin-top:14px;
+}
+.rule-double{
+  border:0;height:7px;border-top:3px solid var(--ink);border-bottom:1px solid var(--ink);
+  margin:clamp(22px,3vw,34px) 0 0;
+}
+.deck{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;
+  gap:24px 48px;padding-top:clamp(22px,3vw,32px);
+}
+.deck p{
+  margin:0;max-width:44ch;color:var(--ink-2);
+  font-size:clamp(1.15rem,2vw,1.42rem);line-height:1.45;
+}
+.deck-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px}
+
+/* ============ PUBLISHED-ON TICKER ============ */
+.ticker{
+  overflow:hidden;border-block:1px solid var(--rule);padding-block:16px;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+          mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+}
+.ticker-track{display:flex;width:max-content}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker-seq{display:flex;align-items:center;flex:none}
+.ticker-item{
+  display:inline-flex;align-items:center;gap:24px;padding-right:24px;white-space:nowrap;
+  font:500 17px/1.3 var(--f-ar);color:var(--ink-2);
+}
+.ticker-item::after{content:"";width:5px;height:5px;background:var(--rule-strong);flex:none}
+
+/* ============ INTRO ============ */
+.intro{
+  display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);
+  gap:clamp(32px,6vw,96px);padding-block:clamp(52px,7.5vw,104px) clamp(60px,8.5vw,116px);
+}
+.lede{margin:0;font-size:clamp(1.2rem,2.05vw,1.5rem);line-height:1.55;color:var(--ink)}
+.lede strong{font-weight:600}
+.lede .mark{box-shadow:inset 0 -.42em 0 var(--accent-soft)}
+.figures{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 28px;align-content:start}
+.fig{border-top:1px solid var(--rule-strong);padding-top:14px}
+.fig .n{
+  font:700 clamp(2.4rem,4.6vw,3.5rem)/1 var(--f-display);letter-spacing:-.04em;
+  color:var(--accent);font-variant-numeric:tabular-nums;
+}
+.fig .l{font:500 15px/1.4 var(--f-display);color:var(--muted);margin-top:10px}
+
+/* ============ SECTIONS ============ */
+.sec{
+  padding-block:clamp(56px,7.5vw,100px) clamp(64px,8.5vw,112px);
+  border-top:1px solid var(--rule);
+  scroll-margin-top:var(--topbar-h);
+}
+.sec-head{max-width:780px}
+h2{
+  font-family:var(--f-display);font-weight:700;letter-spacing:-.035em;
+  font-size:clamp(2rem,4.8vw,3.25rem);line-height:1.02;margin:0;text-wrap:balance;
+}
+.sec-sub{margin:16px 0 0;color:var(--muted);font-size:1.1rem;line-height:1.55;max-width:56ch}
+
+/* ============ PLATFORMS (bento) ============ */
+.platforms{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:1px;background:var(--rule);border:1px solid var(--rule);
+  margin-top:clamp(34px,4.5vw,54px);
+}
+.pf{
+  position:relative;min-width:0;background:var(--surface);
+  padding:clamp(22px,2.4vw,30px);display:flex;flex-direction:column;gap:16px;
+}
+.pf::before{
+  content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--accent);
+  transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease-in-out);
+}
+.pf:focus-within::before{transform:scaleX(1)}
+@media (hover:hover){.pf:hover::before{transform:scaleX(1)}}
+.pf-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.pf-ar{
+  margin:0;font-family:var(--f-ar);font-weight:700;text-align:left;
+  font-size:1.75rem;line-height:1.3;letter-spacing:0;
+}
+.pf-en{margin:2px 0 0;font:600 15px/1.3 var(--f-display);color:var(--ink-2)}
+.pf-tag{
+  flex:none;white-space:nowrap;font:500 13px/1 var(--f-display);color:var(--muted);
+  border:1px solid var(--rule-strong);padding:6px 8px;
+}
+.pf-note{margin:0;font-size:1rem;line-height:1.55;color:var(--ink-2);flex:1;max-width:52ch}
+.pf .links{margin-top:auto}
+
+.pf--feature{grid-column:span 2;background:var(--accent-soft)}
+.pf--feature .pf-ar{font-size:clamp(2.3rem,4.4vw,3.4rem);line-height:1.2}
+.pf--feature .pf-note{font-size:1.12rem}
+
+.pf--publisher{
+  grid-column:1 / -1;background:var(--surface-2);
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.7fr) auto;align-items:center;gap:14px 40px;
+}
+.pf--publisher .pf-note{flex:none}
+
+/* ============ PROGRAMS ============ */
+.programs{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  margin-top:clamp(34px,4.5vw,54px);
+}
+.prog{display:flex;flex-direction:column;gap:14px;min-width:0}
+/* Both shows share one set of rows, so artwork, titles and copy line up across the columns */
+@supports (grid-template-rows: subgrid){
+  .prog{display:grid;grid-row:span 5;grid-template-rows:subgrid;row-gap:14px;align-content:start}
+}
+.prog--lead{padding-right:clamp(24px,4vw,56px)}
+.prog--side{padding-left:clamp(24px,4vw,56px);border-left:1px solid var(--rule)}
+.prog-media{display:block;overflow:hidden;aspect-ratio:16 / 9;background:var(--surface-2);margin-bottom:8px}
+.prog-media img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease-out)}
+@media (hover:hover){a.prog-media:hover img{transform:scale(1.03)}}
+.prog-meta{margin:0;font:600 15px/1.3 var(--f-display);color:var(--accent)}
+.prog-title{
+  margin:0;font-family:var(--f-ar);font-weight:700;text-align:left;
+  font-size:clamp(2rem,3.6vw,2.9rem);line-height:1.25;
+}
+.prog p.prog-desc{margin:0;font-size:1.05rem;line-height:1.58;color:var(--ink-2);max-width:54ch}
+.prog .links{margin-top:6px;align-self:start;align-items:flex-start}
+.ep-label{margin:6px 0 12px;font:600 15px/1.3 var(--f-display);color:var(--ink)}
+.episodes{list-style:none;margin:0;padding:0;border-bottom:1px solid var(--rule)}
+.episodes a{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:14px 2px;border-top:1px solid var(--rule);text-decoration:none;
+  font:600 17px/1.2 var(--f-display);color:var(--ink);transition:color .2s var(--ease-out);
+}
+.episodes a .arr{color:var(--muted);transition:transform .3s var(--ease-out),color .2s var(--ease-out)}
+.episodes a:hover{color:var(--accent)}
+.episodes a:hover .arr{color:var(--accent);transform:translate(2px,-2px)}
+
+/* ============ CAREER SPINE ============ */
+.spine{
+  --date-col:168px;--col-gap:clamp(32px,4.5vw,72px);
+  position:relative;list-style:none;padding:0;margin:clamp(40px,5vw,64px) 0 0;
+}
+.spine::before,.spine::after{
+  content:"";position:absolute;top:10px;bottom:0;width:1px;
+  left:calc(var(--date-col) + var(--col-gap) / 2);background:var(--rule-strong);
+}
+.spine::after{display:none;background:var(--accent);width:2px;margin-left:-.5px;transform-origin:top}
+.job{
+  position:relative;display:grid;grid-template-columns:var(--date-col) minmax(0,1fr);
+  gap:0 var(--col-gap);padding-bottom:clamp(44px,5.5vw,72px);
+}
+.job:last-child{padding-bottom:0}
+.job::before{
+  content:"";position:absolute;top:9px;width:11px;height:11px;
+  left:calc(var(--date-col) + var(--col-gap) / 2 - 5px);
+  background:var(--paper);border:2px solid var(--rule-strong);
+}
+.job.is-now::before{background:var(--accent);border-color:var(--accent)}
+.job-when{
+  position:sticky;top:calc(var(--topbar-h) + 28px);align-self:start;
+  font:500 13.5px/1.65 var(--f-mono);letter-spacing:.02em;color:var(--muted);padding-top:4px;
+}
+.job-when .now{color:var(--accent)}
+.job-role{
+  margin:0;font-family:var(--f-display);font-weight:650;letter-spacing:-.02em;
+  font-size:clamp(1.3rem,2.4vw,1.7rem);line-height:1.2;text-wrap:balance;
+}
+.job-org{margin:8px 0 0;font:500 16px/1.4 var(--f-display);color:var(--muted)}
+.job ul{margin:18px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;max-width:var(--measure)}
+.job li{position:relative;padding-left:22px;font-size:1.04rem;line-height:1.56;color:var(--ink-2)}
+.job li::before{content:"";position:absolute;left:0;top:.8em;width:10px;height:1px;background:var(--rule-strong)}
+.job .links{margin-top:20px}
+
+/* ============ EVENTS (timeline strip) ============ */
+.events{
+  list-style:none;padding:0;margin:clamp(40px,5vw,60px) 0 0;
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:28px;
+  border-top:2px solid var(--ink);
+}
+.ev{position:relative;padding-top:26px}
+.ev::before{content:"";position:absolute;left:0;top:-6px;width:10px;height:10px;background:var(--accent)}
+.ev-yr{margin:0;font:500 13.5px/1.4 var(--f-mono);color:var(--accent);letter-spacing:.02em}
+.ev-t{
+  margin:10px 0 0;font-family:var(--f-display);font-weight:600;letter-spacing:-.015em;
+  font-size:clamp(1.12rem,1.6vw,1.3rem);line-height:1.3;text-wrap:balance;
+}
+.ev-place{margin:8px 0 0;font-size:1rem;color:var(--muted)}
+
+/* ============ CRAFT ============ */
+.skills{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:clamp(44px,5vw,64px) clamp(32px,7vw,110px);margin-top:clamp(40px,5vw,60px);
+}
+.sk h3{
+  margin:0 0 20px;padding-bottom:14px;border-bottom:1px solid var(--ink);
+  font:700 1.3rem/1.2 var(--f-display);letter-spacing:-.02em;
+}
+.sk ul{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 28px}
+.sk li{display:grid;gap:3px;align-content:start}
+.sk li b{font:600 16.5px/1.35 var(--f-display);color:var(--ink)}
+.sk li span{font-size:1rem;line-height:1.45;color:var(--muted)}
+
+/* ============ CONTACT ============ */
+.contact-main{display:grid;gap:clamp(32px,4.5vw,52px);margin-top:clamp(34px,4.5vw,52px)}
+.reach{display:grid;justify-items:start;gap:8px}
+.reach .l{font:500 15px/1.3 var(--f-display);color:var(--muted)}
+.big-link{
+  display:inline-block;max-width:100%;overflow-wrap:anywhere;
+  font:700 clamp(1.3rem,5.4vw,3.6rem)/1.1 var(--f-display);letter-spacing:-.035em;
+  color:var(--ink);text-decoration:none;border-bottom:3px solid var(--accent);padding-bottom:6px;
+  transition:color .2s var(--ease-out);
+}
+.big-link:hover{color:var(--accent)}
+.copy-row{display:flex;align-items:center;flex-wrap:wrap;gap:10px 16px;margin-top:10px;min-height:40px}
+.copy{
+  font:600 14px/1 var(--f-display);color:var(--ink);background:transparent;cursor:pointer;
+  border:1px solid var(--ink);padding:11px 14px;
+  transition:background-color .2s var(--ease-out),color .2s var(--ease-out),border-color .2s var(--ease-out),transform .2s var(--ease-out);
+}
+.copy:hover{background:var(--ink);color:var(--paper)}
+.copy:active{transform:translateY(1px)}
+.copy.is-done{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.copy-status{font:500 15px/1.4 var(--f-display);color:var(--muted)}
+.copy-status.is-error{color:var(--ink)}
+.contact-grid{display:flex;flex-wrap:wrap;gap:24px clamp(40px,7vw,96px);margin-top:clamp(36px,4.5vw,52px)}
+.cc{display:flex;flex-direction:column;gap:6px}
+.cc .l{font:500 15px/1.3 var(--f-display);color:var(--muted)}
+.cc a,.cc span.v{
+  font:600 clamp(1.1rem,2.2vw,1.35rem)/1.3 var(--f-display);letter-spacing:-.01em;
+  color:var(--ink);text-decoration:none;width:fit-content;
+}
+.cc a{border-bottom:2px solid var(--accent);padding-bottom:2px;transition:color .2s var(--ease-out)}
+.cc a:hover{color:var(--accent)}
+
+footer{
+  display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px 32px;
+  padding-block:32px 48px;border-top:1px solid var(--rule);
+  font:400 14px/1.7 var(--f-display);color:var(--muted);
+}
+footer p{margin:0;max-width:64ch}
+.foot-meta{display:flex;align-items:center;gap:22px;white-space:nowrap}
+.foot-meta a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule-strong)}
+.foot-meta a:hover{color:var(--accent);border-color:var(--accent)}
 
 /* ============ RESPONSIVE ============ */
-@media (max-width:780px){
-  .standfirst{grid-template-columns:1fr}
-  .job{grid-template-columns:1fr;gap:12px}
-  .job-when{padding-top:0}
-  .job-when .now{display:inline;margin-left:8px}
+@media (max-width:980px){
+  .platforms{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pf--publisher{grid-template-columns:1fr;align-items:start}
+  .events{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:44px;border-top:0}
+  .ev{border-top:2px solid var(--ink)}
+  .sk ul{grid-template-columns:1fr}
+  .tb-actions .btn-ghost{display:none}
+}
+@media (max-width:860px){
+  .intro{grid-template-columns:1fr}
+  .programs{grid-template-columns:1fr;row-gap:48px}
+  .prog--lead{padding-right:0}
+  .prog--side{padding-left:0;border-left:0;border-top:1px solid var(--rule);padding-top:44px}
+}
+@media (max-width:760px){
+  .deck{grid-template-columns:1fr}
+  .spine{padding-left:32px}
+  .spine::before,.spine::after{left:5px}
+  .job{grid-template-columns:minmax(0,1fr);gap:8px}
+  .job::before{left:-32px}
+  .job-when{position:static;padding-top:0}
   .job-when br{display:none}
-  .ev{grid-template-columns:1fr;gap:5px}
-  .ev:hover{padding-left:0}
-  section{scroll-margin-top:64px}
+  .skills{grid-template-columns:1fr}
 }
-@media (max-width:540px){
+@media (max-width:600px){
   .platforms{grid-template-columns:1fr}
-  .tb-name{font-size:12.5px}
-  .pf-ar{font-size:1.45rem}
-  .prog-title{font-size:1.7rem}
-  .ticker-item{font-size:12.5px;padding-inline:12px;gap:12px}
+  .pf--feature{grid-column:auto}
+  .pf-ar{font-size:1.6rem}
+  .events{grid-template-columns:1fr}
+  .ticker-item{font-size:15px;gap:18px;padding-right:18px}
+  footer{flex-direction:column;align-items:flex-start}
 }
-@media (max-width:380px){
-  .figures{grid-template-columns:1fr}
+@media (max-width:420px){
+  .kicker{font-size:11px;letter-spacing:.12em}
   .tb-name{display:none}
-  .tb-nav{width:100%}
+  .tb-nav{margin-left:0;flex:1}
+}
+
+/* ============ MOTION ============ */
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes rule-in{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes spine-fill{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+
+@media (prefers-reduced-motion:no-preference){
+  /* The masthead assembles like a front page: name, rule, then the deck */
+  .kicker            {animation:rise .6s .04s both var(--ease-out)}
+  .nameplate         {animation:rise .8s .10s both var(--ease-out)}
+  .nameplate .ar-name{animation:rise .8s .22s both var(--ease-out)}
+  .rule-double       {transform-origin:left center;animation:rule-in .8s .30s both var(--ease-in-out)}
+  .deck              {animation:rise .7s .42s both var(--ease-out)}
+  .ticker            {animation:fade .9s .55s both ease}
+  .ticker-track      {animation:tick 52s linear infinite}
+
+  /* Career spine fills as the reader moves through the timeline */
+  @supports (animation-timeline: view()){
+    .spine{view-timeline:--career block}
+    .spine::after{
+      display:block;animation:spine-fill linear both;
+      animation-timeline:--career;animation-range:cover 50vh cover calc(100% - 50vh);
+    }
+  }
+}
+
+/* Scroll reveals: armed only once JS confirms support and motion is allowed */
+html.anim .reveal{opacity:0;transform:translateY(22px)}
+html.anim .reveal.in{
+  opacity:1;transform:none;
+  transition:opacity .7s var(--ease-out),transform .7s var(--ease-out);
+  transition-delay:var(--d,0ms);
 }
 
 @media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
   *,*::before,*::after{
-    animation-duration:.001ms!important;animation-iteration-count:1!important;
-    transition-duration:.001ms!important;scroll-behavior:auto!important;
+    animation-duration:.01ms!important;animation-iteration-count:1!important;
+    transition-duration:.01ms!important;scroll-behavior:auto!important;
   }
-  html.anim .reveal{opacity:1;transform:none}
 }
 </style>
 </head>
 <body>
-<!-- ===== CONTENT START ===== -->
+<a class="skip" href="#main">Skip to content</a>
+
 <div class="topbar" id="topbar">
   <div class="wrap topbar-in">
-    <span class="tb-name">Yehia Ahmed Gad El-Karim</span>
+    <a class="tb-name" href="#top">Yehia Ahmed Gad El-Karim</a>
     <nav class="tb-nav" aria-label="Sections">
       <a href="#platforms">Platforms</a>
       <a href="#programs">Programs</a>
@@ -346,431 +536,450 @@ section{scroll-margin-top:76px}
       <a href="#skills">Craft</a>
       <a href="#contact">Contact</a>
     </nav>
+    <div class="tb-actions">
+      <a class="btn btn-sm" href="tel:+201283570047" title="+20 128 357 0047">Call me</a>
+      <a class="btn btn-sm btn-ghost" href="mailto:yehiagadelkarim@outlook.com">Email me</a>
+    </div>
   </div>
 </div>
 
 <div class="wrap">
 
-  <header class="masthead">
-    <div class="kicker">
-      <span class="live"><span class="dot"></span>Currently at Trend DC for Digital Media</span>
-      <span>Cairo, Egypt</span>
-      <span>Est. 2011</span>
-    </div>
+  <header class="masthead" id="top">
+    <p class="kicker">Senior digital content creator &amp; editor</p>
 
     <h1 class="nameplate">
       Yehia Ahmed<br>Gad El-Karim
-      <span class="ar-name">يحيى أحمد جاد الكريم</span>
+      <span class="ar-name" lang="ar" dir="rtl">يحيى أحمد جاد الكريم</span>
     </h1>
 
     <hr class="rule-double">
 
-    <div class="dateline">
-      <span>Senior Digital Content Creator &amp; Editor</span>
-      <span>Sports Desk</span>
-      <a href="mailto:yehiagadelkarim@outlook.com">yehiagadelkarim@outlook.com</a>
-      <a href="tel:+201283570047">+20 128 357 0047</a>
-    </div>
-
-    <div class="ticker" aria-hidden="true">
-      <div class="ticker-track">
-        <div class="ticker-seq">
-          <span class="ticker-item">سعودي سبورت</span><span class="ticker-item">سبق</span><span class="ticker-item">العلم</span><span class="ticker-item">هاشتاق السعودية</span><span class="ticker-item">الوطن</span><span class="ticker-item">الميدان الرياضي</span><span class="ticker-item">برا الملعب</span><span class="ticker-item">الجولة بالمختصر</span><span class="ticker-item">شاعر المليون</span><span class="ticker-item">رابطة المحترفين</span>
-        </div>
-        <div class="ticker-seq">
-          <span class="ticker-item">سعودي سبورت</span><span class="ticker-item">سبق</span><span class="ticker-item">العلم</span><span class="ticker-item">هاشتاق السعودية</span><span class="ticker-item">الوطن</span><span class="ticker-item">الميدان الرياضي</span><span class="ticker-item">برا الملعب</span><span class="ticker-item">الجولة بالمختصر</span><span class="ticker-item">شاعر المليون</span><span class="ticker-item">رابطة المحترفين</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="standfirst">
-      <p>Sports editor and content lead with <strong>15+ years</strong> across leading Saudi and Egyptian media houses — running daily editorial operations, writing and scripting digital sports programs, and building audiences across text, image and video. Bylines and desks at <strong>Sabq</strong>, <strong>Saudi Sport</strong>, <strong>Hashtag KSA</strong>, <strong>Alelm</strong>, <strong>Al Watan</strong>, <strong>Alyaum</strong>, <strong>CBC</strong> and the <strong>EPFA</strong>.</p>
-      <div class="figures">
-        <div class="fig"><div class="n">15+</div><div class="l">Years on the<br>sports desk</div></div>
-        <div class="fig"><div class="n">5</div><div class="l">Saudi platforms<br>managed daily</div></div>
-        <div class="fig"><div class="n">2</div><div class="l">Digital programs<br>written &amp; edited</div></div>
-        <div class="fig"><div class="n">+30%</div><div class="l">Follower growth<br>World Cup 2022</div></div>
+    <div class="deck">
+      <p>Fifteen years on Saudi and Egyptian sports desks. Now leading sports content at Trend DC for Digital Media.</p>
+      <div class="deck-actions">
+        <a class="btn" href="tel:+201283570047" title="+20 128 357 0047">Call me</a>
+        <a class="btn btn-ghost" href="mailto:yehiagadelkarim@outlook.com">Email me</a>
       </div>
     </div>
   </header>
 
-  <!-- ============ PLATFORMS ============ -->
-  <section id="platforms">
-    <div class="sec-head">
-      <span class="sec-num">01</span>
-      <h2>Platforms I edit for</h2>
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track" lang="ar">
+      <div class="ticker-seq">
+        <span class="ticker-item">سعودي سبورت</span><span class="ticker-item">سبق</span><span class="ticker-item">العلم</span><span class="ticker-item">هاشتاق السعودية</span><span class="ticker-item">الوطن</span><span class="ticker-item">الميدان الرياضي</span><span class="ticker-item">برا الملعب</span><span class="ticker-item">الجولة بالمختصر</span><span class="ticker-item">شاعر المليون</span><span class="ticker-item">رابطة المحترفين</span>
+      </div>
+      <div class="ticker-seq">
+        <span class="ticker-item">سعودي سبورت</span><span class="ticker-item">سبق</span><span class="ticker-item">العلم</span><span class="ticker-item">هاشتاق السعودية</span><span class="ticker-item">الوطن</span><span class="ticker-item">الميدان الرياضي</span><span class="ticker-item">برا الملعب</span><span class="ticker-item">الجولة بالمختصر</span><span class="ticker-item">شاعر المليون</span><span class="ticker-item">رابطة المحترفين</span>
+      </div>
     </div>
-    <p class="sec-sub">Sports content across a portfolio of top-tier Saudi media platforms, produced and published under Trend DC for Digital Media. Each link goes to the platform's live channel.</p>
+  </div>
 
-    <div class="platforms">
+  <main id="main" tabindex="-1">
 
-      <article class="pf">
-        <div class="pf-top">
-          <div>
-            <div class="pf-ar">سعودي سبورت</div>
-            <div class="pf-en">Saudi Sport</div>
+    <!-- ============ INTRO ============ -->
+    <section class="intro" aria-label="Summary">
+      <p class="lede">Sports editor and content lead with <strong class="mark">15+ years</strong> across leading Saudi and Egyptian media houses. I run daily editorial operations, write and script digital sports programs, and build audiences across text, image and video. Bylines and desks at <strong>Sabq</strong>, <strong>Saudi Sport</strong>, <strong>Hashtag KSA</strong>, <strong>Alelm</strong>, <strong>Al Watan</strong>, <strong>Alyaum</strong>, <strong>CBC</strong> and the <strong>EPFA</strong>.</p>
+      <div class="figures">
+        <div class="fig"><div class="n">15+</div><div class="l">Years on the sports desk</div></div>
+        <div class="fig"><div class="n">5</div><div class="l">Saudi platforms managed daily</div></div>
+        <div class="fig"><div class="n">2</div><div class="l">Digital programs written &amp; edited</div></div>
+        <div class="fig"><div class="n">+30%</div><div class="l">Follower growth, World Cup 2022</div></div>
+      </div>
+    </section>
+
+    <!-- ============ PLATFORMS ============ -->
+    <section class="sec" id="platforms">
+      <div class="sec-head">
+        <h2>Platforms I edit for</h2>
+        <p class="sec-sub">Sports content across a portfolio of top-tier Saudi media platforms, produced and published under Trend DC for Digital Media.</p>
+      </div>
+
+      <div class="platforms">
+
+        <article class="pf pf--feature">
+          <div class="pf-top">
+            <div>
+              <h3 class="pf-ar" lang="ar" dir="rtl">سعودي سبورت</h3>
+              <p class="pf-en">Saudi Sport</p>
+            </div>
+            <span class="pf-tag">Sports</span>
           </div>
-          <span class="pf-tag">Sports</span>
-        </div>
-        <p class="pf-note">Saudi and international football coverage — match reports, transfer news and short-form video for a two-million-strong following.</p>
-        <div class="links">
-          <a class="lnk primary" href="https://x.com/So3odySports1" target="_blank" rel="noopener">X</a>
-          <a class="lnk" href="https://www.instagram.com/so3odysport/?hl=ar" target="_blank" rel="noopener">Instagram</a>
-          <a class="lnk" href="https://www.tiktok.com/@so3odysports" target="_blank" rel="noopener">TikTok</a>
-          <a class="lnk" href="https://www.facebook.com/So3odySports/" target="_blank" rel="noopener">Facebook</a>
-          <a class="lnk" href="https://www.snapchat.com/p/98dd0135-a235-4896-8537-4472938c29b5/63170018844672" target="_blank" rel="noopener">Snapchat</a>
-        </div>
-      </article>
-
-      <article class="pf">
-        <div class="pf-top">
-          <div>
-            <div class="pf-ar">سبق</div>
-            <div class="pf-en">Sabq Newspaper</div>
-          </div>
-          <span class="pf-tag">News</span>
-        </div>
-        <p class="pf-note">Saudi Arabia's largest digital newspaper.</p>
-        <div class="links">
-          <a class="lnk primary" href="https://www.youtube.com/@sabqorg" target="_blank" rel="noopener">YouTube</a>
-          <a class="lnk" href="https://x.com/sabqorg" target="_blank" rel="noopener">X</a>
-        </div>
-      </article>
-
-      <article class="pf">
-        <div class="pf-top">
-          <div>
-            <div class="pf-ar">العلم</div>
-            <div class="pf-en">Alelm</div>
-          </div>
-          <span class="pf-tag">Knowledge</span>
-        </div>
-        <p class="pf-note">Editorial and knowledge platform — <span class="ar">«المعرفة وراء الخبر»</span>.</p>
-        <div class="links">
-          <a class="lnk primary" href="https://alelm.net" target="_blank" rel="noopener">alelm.net</a>
-          <a class="lnk" href="https://www.youtube.com/c/alelmmedia" target="_blank" rel="noopener">YouTube</a>
-          <a class="lnk" href="https://x.com/AlelmMedia" target="_blank" rel="noopener">X</a>
-        </div>
-      </article>
-
-      <article class="pf">
-        <div class="pf-top">
-          <div>
-            <div class="pf-ar">هاشتاق السعودية</div>
-            <div class="pf-en">Hashtag KSA</div>
-          </div>
-          <span class="pf-tag">Social</span>
-        </div>
-        <p class="pf-note">Social-first Saudi news brand with a companion mobile app.</p>
-        <div class="links">
-          <a class="lnk primary" href="https://x.com/HashKsaPlus" target="_blank" rel="noopener">X / @HashKsaPlus</a>
-          <a class="lnk" href="https://www.instagram.com/hashksa/" target="_blank" rel="noopener">Instagram</a>
-          <a class="lnk" href="https://www.facebook.com/HashKSA/" target="_blank" rel="noopener">Facebook</a>
-          <a class="lnk" href="https://play.google.com/store/apps/details?id=com.trenddc.hashksa" target="_blank" rel="noopener">App</a>
-        </div>
-      </article>
-
-      <article class="pf">
-        <div class="pf-top">
-          <div>
-            <div class="pf-ar">الوطن</div>
-            <div class="pf-en">Al Watan Newspaper</div>
-          </div>
-          <span class="pf-tag">Daily</span>
-        </div>
-        <p class="pf-note">Long-running Saudi daily. Sports content production, editing and cross-platform publishing.</p>
-        <div class="links">
-          <a class="lnk primary" href="https://www.alwatan.com.sa/" target="_blank" rel="noopener">alwatan.com.sa</a>
-          <a class="lnk" href="https://x.com/alwatansa" target="_blank" rel="noopener">X</a>
-          <a class="lnk" href="https://www.facebook.com/alwatanksa/" target="_blank" rel="noopener">Facebook</a>
-        </div>
-      </article>
-
-      <article class="pf">
-        <div class="pf-top">
-          <div>
-            <div class="pf-ar">تريند</div>
-            <div class="pf-en">Trend DC — Publisher</div>
-          </div>
-          <span class="pf-tag">Group</span>
-        </div>
-        <p class="pf-note">The digital media group behind the platforms above, where I manage the sports content desk.</p>
-        <div class="links">
-          <a class="lnk primary" href="https://trenddc.com" target="_blank" rel="noopener">trenddc.com</a>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- ============ PROGRAMS ============ -->
-  <section id="programs">
-    <div class="sec-head">
-      <span class="sec-num">02</span>
-      <h2>Programs I write and edit</h2>
-    </div>
-    <p class="sec-sub">Recurring digital sports shows — editorial line, scripting and episode research.</p>
-
-    <div class="programs">
-      <article class="prog">
-        <div class="prog-meta">Alelm · Weekly</div>
-        <h3 class="prog-title ar">برا الملعب</h3>
-        <p>"Outside the Pitch" — the story behind the story: what shapes results before players reach the field. I author the editorial line and the episode scripts.</p>
-        <div class="ep-label">Full series</div>
-        <div class="links">
-          <a class="lnk primary" href="https://www.youtube.com/watch?v=_-CzWbBAqO4&amp;list=PL4VhCfbX4rSsXDYQ7_fW1mQUTtpY_Gu4w" target="_blank" rel="noopener">Watch the playlist</a>
-        </div>
-      </article>
-
-      <article class="prog">
-        <div class="prog-meta">Sabq · Matchweek</div>
-        <h3 class="prog-title ar">الجولة بالمختصر</h3>
-        <p>"The Matchweek in Brief" — the Saudi league round condensed into one tight, fast-turnaround digital segment. Scripted and edited to a hard weekly deadline.</p>
-        <div class="ep-label">Selected episodes</div>
-        <div class="links">
-          <a class="lnk primary" href="https://x.com/sabqorg/status/2070507450172613023" target="_blank" rel="noopener">Episode 01</a>
-          <a class="lnk primary" href="https://x.com/sabqorg/status/2073753775613882829" target="_blank" rel="noopener">Episode 02</a>
-          <a class="lnk primary" href="https://x.com/sabqorg/status/2100276559500267764" target="_blank" rel="noopener">Episode 03</a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- ============ CAREER ============ -->
-  <section id="career">
-    <div class="sec-head">
-      <span class="sec-num">03</span>
-      <h2>Where the work has been filed</h2>
-    </div>
-    <p class="sec-sub">Fifteen years of desks, in reverse order. Links go to the outlet or the channel the work was published on.</p>
-
-    <div class="spine">
-
-      <article class="job">
-        <div class="job-when mono">Jun 2020 —<span class="now">Present</span></div>
-        <div>
-          <h3 class="job-role">Senior Sports Content Manager &amp; Editor</h3>
-          <p class="job-org">Trend DC for Digital Media · Saudi Arabia</p>
-          <ul>
-            <li>Lead sports content across Saudi Sport, Hashtag KSA, Sabq, Alelm and Al Watan.</li>
-            <li>Author the editorial content and scripts for <span class="ar">«برا الملعب»</span> and <span class="ar">«الجولة بالمختصر»</span>.</li>
-            <li>Produce, edit and publish multimedia — text, images, video — tuned per platform audience.</li>
-            <li>Run daily editorial operations: content calendars, quality control and brand alignment.</li>
-          </ul>
+          <p class="pf-note">Saudi and international football coverage: match reports, transfer news and short-form video for a two-million-strong following.</p>
           <div class="links">
-            <a class="lnk primary" href="https://trenddc.com" target="_blank" rel="noopener">Trend DC</a>
-            <a class="lnk" href="https://x.com/So3odySports1" target="_blank" rel="noopener">Saudi Sport</a>
-            <a class="lnk" href="https://www.youtube.com/@sabqorg" target="_blank" rel="noopener">Sabq</a>
-            <a class="lnk" href="https://alelm.net" target="_blank" rel="noopener">Alelm</a>
-            <a class="lnk" href="https://x.com/HashKsaPlus" target="_blank" rel="noopener">Hashtag KSA</a>
-            <a class="lnk" href="https://www.alwatan.com.sa/" target="_blank" rel="noopener">Al Watan</a>
+            <a class="lnk primary" href="https://x.com/So3odySports1" target="_blank" rel="noopener">X</a>
+            <a class="lnk" href="https://www.instagram.com/so3odysport/?hl=ar" target="_blank" rel="noopener">Instagram</a>
+            <a class="lnk" href="https://www.tiktok.com/@so3odysports" target="_blank" rel="noopener">TikTok</a>
+            <a class="lnk" href="https://www.facebook.com/So3odySports/" target="_blank" rel="noopener">Facebook</a>
+            <a class="lnk" href="https://www.snapchat.com/p/98dd0135-a235-4896-8537-4472938c29b5/63170018844672" target="_blank" rel="noopener">Snapchat</a>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="job">
-        <div class="job-when mono">Oct 2022 —<br>Jan 2023</div>
-        <div>
-          <h3 class="job-role">Project Manager — <span class="ar">«الميدان الرياضي»</span> Social Platforms</h3>
-          <p class="job-org">Alyaum Newspaper · FIFA World Cup Qatar 2022</p>
-          <ul>
-            <li>Directed end-to-end social publishing through a high-traffic global tournament.</li>
-            <li>Led a team of editors delivering real-time coverage across the group and knockout stages.</li>
-            <li>Drove a 30% increase in Twitter and Instagram followers over the campaign.</li>
-            <li>Used analytics to tune content, lifting organic search rankings and account visibility.</li>
-          </ul>
+        <article class="pf">
+          <div class="pf-top">
+            <div>
+              <h3 class="pf-ar" lang="ar" dir="rtl">سبق</h3>
+              <p class="pf-en">Sabq Newspaper</p>
+            </div>
+            <span class="pf-tag">News</span>
+          </div>
+          <p class="pf-note">Saudi Arabia's largest digital newspaper.</p>
           <div class="links">
-            <a class="lnk primary" href="https://www.alyaum.com/%D8%A7%D9%84%D9%85%D9%8A%D8%AF%D8%A7%D9%86-%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A" target="_blank" rel="noopener">Al Meedan Sport</a>
-            <a class="lnk" href="https://x.com/MidanAlYaum" target="_blank" rel="noopener">X / @MidanAlYaum</a>
-            <a class="lnk" href="https://www.alyaum.com" target="_blank" rel="noopener">alyaum.com</a>
+            <a class="lnk primary" href="https://www.youtube.com/@sabqorg" target="_blank" rel="noopener">YouTube</a>
+            <a class="lnk" href="https://x.com/sabqorg" target="_blank" rel="noopener">X</a>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="job">
-        <div class="job-when mono">Sep 2019 —<br>Apr 2020</div>
-        <div>
-          <h3 class="job-role">Social Media Manager</h3>
-          <p class="job-org">Infas ME — WIN Holding Group · UAE</p>
-          <ul>
-            <li>Ran the full social presence for <span class="ar">«شاعر المليون»</span> (Million's Poet), a top-rated UAE TV reality show, through its broadcast season.</li>
-          </ul>
+        <article class="pf">
+          <div class="pf-top">
+            <div>
+              <h3 class="pf-ar" lang="ar" dir="rtl">العلم</h3>
+              <p class="pf-en">Alelm</p>
+            </div>
+            <span class="pf-tag">Knowledge</span>
+          </div>
+          <p class="pf-note">Editorial and knowledge platform. Its motto: <span class="ar" lang="ar" dir="rtl">«المعرفة وراء الخبر»</span>, the knowledge behind the news.</p>
           <div class="links">
-            <a class="lnk primary" href="https://millionspoet.ae/" target="_blank" rel="noopener">millionspoet.ae</a>
-            <a class="lnk" href="https://www.youtube.com/@Millionspoet" target="_blank" rel="noopener">YouTube</a>
-            <a class="lnk" href="https://x.com/millions_poet" target="_blank" rel="noopener">X</a>
-            <a class="lnk" href="https://www.facebook.com/millionspoet.ae/" target="_blank" rel="noopener">Facebook</a>
+            <a class="lnk primary" href="https://alelm.net" target="_blank" rel="noopener">alelm.net</a>
+            <a class="lnk" href="https://www.youtube.com/c/alelmmedia" target="_blank" rel="noopener">YouTube</a>
+            <a class="lnk" href="https://x.com/AlelmMedia" target="_blank" rel="noopener">X</a>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="job">
-        <div class="job-when mono">Apr 2019 —<br>Sep 2019</div>
-        <div>
-          <h3 class="job-role">Content Creator</h3>
-          <p class="job-org">S Productions Media Production Co. · Egypt</p>
-          <ul>
-            <li>Produced daily multimedia content — text, images, video — across multiple platforms.</li>
-            <li>Coordinated and conducted on-site interviews with actors across filming locations.</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="job">
-        <div class="job-when mono">Dec 2017 —<br>Apr 2019</div>
-        <div>
-          <h3 class="job-role">Digital Editor &amp; Copywriter</h3>
-          <p class="job-org">CBC TV Channel · Egypt</p>
-          <ul>
-            <li>Built and managed the channel's digital content for its target audience.</li>
-            <li>Supervised multimedia selection and editing — images, graphics, video — to brand standard.</li>
-            <li>Proofread and copy-edited everything before publication.</li>
-          </ul>
+        <article class="pf">
+          <div class="pf-top">
+            <div>
+              <h3 class="pf-ar" lang="ar" dir="rtl">هاشتاق السعودية</h3>
+              <p class="pf-en">Hashtag KSA</p>
+            </div>
+            <span class="pf-tag">Social</span>
+          </div>
+          <p class="pf-note">Social-first Saudi news brand with a companion mobile app.</p>
           <div class="links">
-            <a class="lnk primary" href="https://www.youtube.com/cbcegypt" target="_blank" rel="noopener">CBC on YouTube</a>
-            <a class="lnk" href="https://x.com/CBCEgypt" target="_blank" rel="noopener">X</a>
-            <a class="lnk" href="https://www.linkedin.com/company/cbc-egypt" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="lnk primary" href="https://x.com/HashKsaPlus" target="_blank" rel="noopener">X / @HashKsaPlus</a>
+            <a class="lnk" href="https://www.instagram.com/hashksa/" target="_blank" rel="noopener">Instagram</a>
+            <a class="lnk" href="https://www.facebook.com/HashKSA/" target="_blank" rel="noopener">Facebook</a>
+            <a class="lnk" href="https://play.google.com/store/apps/details?id=com.trenddc.hashksa" target="_blank" rel="noopener">App</a>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="job">
-        <div class="job-when mono">May 2013 —<br>Jun 2016</div>
-        <div>
-          <h3 class="job-role">Website Editor-in-Chief</h3>
-          <p class="job-org">Egyptian Professional Footballers Association (EPFA)</p>
-          <ul>
-            <li>Directed end-to-end publication of reports, articles and news for the official website.</li>
-            <li>Produced and edited all short films and promotional video for the Association.</li>
-            <li>Built and maintained the Association's content across every social channel.</li>
-            <li>Organised and prepared the EPFA's major events (listed below).</li>
-          </ul>
+        <article class="pf">
+          <div class="pf-top">
+            <div>
+              <h3 class="pf-ar" lang="ar" dir="rtl">الوطن</h3>
+              <p class="pf-en">Al Watan Newspaper</p>
+            </div>
+            <span class="pf-tag">Daily</span>
+          </div>
+          <p class="pf-note">Long-running Saudi daily. Sports content production, editing and cross-platform publishing.</p>
           <div class="links">
-            <a class="lnk primary" href="https://epfa.divisionafrica.org/en/about-egyptian-professional-footballers-association-513" target="_blank" rel="noopener">EPFA · FIFPro Africa</a>
-            <a class="lnk" href="https://www.facebook.com/EPFAEGYPT/" target="_blank" rel="noopener">Facebook</a>
+            <a class="lnk primary" href="https://www.alwatan.com.sa/" target="_blank" rel="noopener">alwatan.com.sa</a>
+            <a class="lnk" href="https://x.com/alwatansa" target="_blank" rel="noopener">X</a>
+            <a class="lnk" href="https://www.facebook.com/alwatanksa/" target="_blank" rel="noopener">Facebook</a>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="job">
-        <div class="job-when mono">Jan 2011 —<br>Feb 2013</div>
-        <div>
-          <h3 class="job-role">News Editor &amp; Reporter</h3>
-          <p class="job-org">Al-Ahly News Website · Egypt</p>
-          <ul>
-            <li>Wrote and edited daily breaking news and long-form sports features.</li>
-            <li>Covered official matches in real time and conducted live on-field player interviews.</li>
-          </ul>
+        <article class="pf pf--publisher">
+          <div>
+            <h3 class="pf-ar" lang="ar" dir="rtl">تريند</h3>
+            <p class="pf-en">Trend DC, publisher</p>
+          </div>
+          <p class="pf-note">The digital media group behind the platforms above, where I manage the sports content desk.</p>
           <div class="links">
-            <a class="lnk primary" href="https://www.ahlynews.com/" target="_blank" rel="noopener">ahlynews.com</a>
+            <a class="lnk primary" href="https://trenddc.com" target="_blank" rel="noopener">trenddc.com</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============ PROGRAMS ============ -->
+    <section class="sec" id="programs">
+      <div class="sec-head">
+        <h2>Programs I write and edit</h2>
+        <p class="sec-sub">Recurring digital sports shows: editorial line, scripting and episode research.</p>
+      </div>
+
+      <div class="programs">
+        <article class="prog prog--lead">
+          <a class="prog-media" href="https://www.youtube.com/watch?v=_-CzWbBAqO4&amp;list=PL4VhCfbX4rSsXDYQ7_fW1mQUTtpY_Gu4w" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <img src="https://i.ytimg.com/vi/_-CzWbBAqO4/maxresdefault.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="">
+          </a>
+          <p class="prog-meta">Alelm · Weekly</p>
+          <h3 class="prog-title" lang="ar" dir="rtl">برا الملعب</h3>
+          <p class="prog-desc">“Outside the Pitch” tells the story behind the story: what shapes results before players reach the field. I author the editorial line and the episode scripts.</p>
+          <div class="links">
+            <a class="lnk primary" href="https://www.youtube.com/watch?v=_-CzWbBAqO4&amp;list=PL4VhCfbX4rSsXDYQ7_fW1mQUTtpY_Gu4w" target="_blank" rel="noopener">Watch the playlist</a>
+          </div>
+        </article>
+
+        <article class="prog prog--side">
+          <div class="prog-media">
+            <img src="assets/aljawla-bilmukhtasar-960.webp" srcset="assets/aljawla-bilmukhtasar-960.webp 960w, assets/aljawla-bilmukhtasar-1440.webp 1440w" sizes="(max-width: 860px) 92vw, 540px" width="1440" height="810" loading="lazy" decoding="async" alt="Episode artwork for الجولة بالمختصر: Ronaldo and Messi, the numbers that shook the World Cup">
+          </div>
+          <p class="prog-meta">Sabq · Matchweek</p>
+          <h3 class="prog-title" lang="ar" dir="rtl">الجولة بالمختصر</h3>
+          <p class="prog-desc">“The Matchweek in Brief” condenses the Saudi league round into one tight, fast-turnaround digital segment. Scripted and edited to a hard weekly deadline.</p>
+          <div class="prog-actions">
+            <p class="ep-label">Selected episodes</p>
+            <ol class="episodes">
+              <li><a href="https://x.com/sabqorg/status/2070507450172613023" target="_blank" rel="noopener">Episode 01 <span class="arr" aria-hidden="true">↗</span></a></li>
+              <li><a href="https://x.com/sabqorg/status/2073753775613882829" target="_blank" rel="noopener">Episode 02 <span class="arr" aria-hidden="true">↗</span></a></li>
+              <li><a href="https://x.com/sabqorg/status/2100276559500267764" target="_blank" rel="noopener">Episode 03 <span class="arr" aria-hidden="true">↗</span></a></li>
+            </ol>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ CAREER ============ -->
+    <section class="sec" id="career">
+      <div class="sec-head">
+        <h2>Where the work has been filed</h2>
+        <p class="sec-sub">Fifteen years of desks, in reverse order.</p>
+      </div>
+
+      <ol class="spine">
+
+        <li class="job is-now">
+          <p class="job-when"><time datetime="2020-06">Jun 2020</time> - <br><span class="now">Present</span></p>
+          <div>
+            <h3 class="job-role">Senior Sports Content Manager &amp; Editor</h3>
+            <p class="job-org">Trend DC for Digital Media · Saudi Arabia</p>
+            <ul>
+              <li>Lead sports content across Saudi Sport, Hashtag KSA, Sabq, Alelm and Al Watan.</li>
+              <li>Author the editorial content and scripts for <span class="ar" lang="ar" dir="rtl">«برا الملعب»</span> and <span class="ar" lang="ar" dir="rtl">«الجولة بالمختصر»</span>.</li>
+              <li>Produce, edit and publish multimedia (text, images, video) tuned per platform audience.</li>
+              <li>Run daily editorial operations: content calendars, quality control and brand alignment.</li>
+            </ul>
+            <div class="links">
+              <a class="lnk primary" href="https://trenddc.com" target="_blank" rel="noopener">Trend DC</a>
+              <a class="lnk" href="https://x.com/So3odySports1" target="_blank" rel="noopener">Saudi Sport</a>
+              <a class="lnk" href="https://www.youtube.com/@sabqorg" target="_blank" rel="noopener">Sabq</a>
+              <a class="lnk" href="https://alelm.net" target="_blank" rel="noopener">Alelm</a>
+              <a class="lnk" href="https://x.com/HashKsaPlus" target="_blank" rel="noopener">Hashtag KSA</a>
+              <a class="lnk" href="https://www.alwatan.com.sa/" target="_blank" rel="noopener">Al Watan</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="job">
+          <p class="job-when"><time datetime="2022-10">Oct 2022</time> - <br><time datetime="2023-01">Jan 2023</time></p>
+          <div>
+            <h3 class="job-role">Project Manager: <span class="ar" lang="ar" dir="rtl">«الميدان الرياضي»</span> Social Platforms</h3>
+            <p class="job-org">Alyaum Newspaper · FIFA World Cup Qatar 2022</p>
+            <ul>
+              <li>Directed end-to-end social publishing through a high-traffic global tournament.</li>
+              <li>Led a team of editors delivering real-time coverage across the group and knockout stages.</li>
+              <li>Drove a 30% increase in Twitter and Instagram followers over the campaign.</li>
+              <li>Used analytics to tune content, lifting organic search rankings and account visibility.</li>
+            </ul>
+            <div class="links">
+              <a class="lnk primary" href="https://www.alyaum.com/%D8%A7%D9%84%D9%85%D9%8A%D8%AF%D8%A7%D9%86-%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A" target="_blank" rel="noopener">Al Meedan Sport</a>
+              <a class="lnk" href="https://x.com/MidanAlYaum" target="_blank" rel="noopener">X / @MidanAlYaum</a>
+              <a class="lnk" href="https://www.alyaum.com" target="_blank" rel="noopener">alyaum.com</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="job">
+          <p class="job-when"><time datetime="2019-09">Sep 2019</time> - <br><time datetime="2020-04">Apr 2020</time></p>
+          <div>
+            <h3 class="job-role">Social Media Manager</h3>
+            <p class="job-org">Infas ME, WIN Holding Group · UAE</p>
+            <ul>
+              <li>Ran the full social presence for <span class="ar" lang="ar" dir="rtl">«شاعر المليون»</span> (Million's Poet), a top-rated UAE TV reality show, through its broadcast season.</li>
+            </ul>
+            <div class="links">
+              <a class="lnk primary" href="https://millionspoet.ae/" target="_blank" rel="noopener">millionspoet.ae</a>
+              <a class="lnk" href="https://www.youtube.com/@Millionspoet" target="_blank" rel="noopener">YouTube</a>
+              <a class="lnk" href="https://x.com/millions_poet" target="_blank" rel="noopener">X</a>
+              <a class="lnk" href="https://www.facebook.com/millionspoet.ae/" target="_blank" rel="noopener">Facebook</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="job">
+          <p class="job-when"><time datetime="2019-04">Apr 2019</time> - <br><time datetime="2019-09">Sep 2019</time></p>
+          <div>
+            <h3 class="job-role">Content Creator</h3>
+            <p class="job-org">S Productions Media Production Co. · Egypt</p>
+            <ul>
+              <li>Produced daily multimedia content (text, images, video) across multiple platforms.</li>
+              <li>Coordinated and conducted on-site interviews with actors across filming locations.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="job">
+          <p class="job-when"><time datetime="2017-12">Dec 2017</time> - <br><time datetime="2019-04">Apr 2019</time></p>
+          <div>
+            <h3 class="job-role">Digital Editor &amp; Copywriter</h3>
+            <p class="job-org">CBC TV Channel · Egypt</p>
+            <ul>
+              <li>Built and managed the channel's digital content for its target audience.</li>
+              <li>Supervised multimedia selection and editing (images, graphics, video) to brand standard.</li>
+              <li>Proofread and copy-edited everything before publication.</li>
+            </ul>
+            <div class="links">
+              <a class="lnk primary" href="https://www.youtube.com/cbcegypt" target="_blank" rel="noopener">CBC on YouTube</a>
+              <a class="lnk" href="https://x.com/CBCEgypt" target="_blank" rel="noopener">X</a>
+              <a class="lnk" href="https://www.linkedin.com/company/cbc-egypt" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="job">
+          <p class="job-when"><time datetime="2013-05">May 2013</time> - <br><time datetime="2016-06">Jun 2016</time></p>
+          <div>
+            <h3 class="job-role">Website Editor-in-Chief</h3>
+            <p class="job-org">Egyptian Professional Footballers Association (EPFA)</p>
+            <ul>
+              <li>Directed end-to-end publication of reports, articles and news for the official website.</li>
+              <li>Produced and edited all short films and promotional video for the Association.</li>
+              <li>Built and maintained the Association's content across every social channel.</li>
+              <li>Organised and prepared the EPFA's major events (listed below).</li>
+            </ul>
+            <div class="links">
+              <a class="lnk primary" href="https://epfa.divisionafrica.org/en/about-egyptian-professional-footballers-association-513" target="_blank" rel="noopener">EPFA · FIFPro Africa</a>
+              <a class="lnk" href="https://www.facebook.com/EPFAEGYPT/" target="_blank" rel="noopener">Facebook</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="job">
+          <p class="job-when"><time datetime="2011-01">Jan 2011</time> - <br><time datetime="2013-02">Feb 2013</time></p>
+          <div>
+            <h3 class="job-role">News Editor &amp; Reporter</h3>
+            <p class="job-org">Al-Ahly News Website · Egypt</p>
+            <ul>
+              <li>Wrote and edited daily breaking news and long-form sports features.</li>
+              <li>Covered official matches in real time and conducted live on-field player interviews.</li>
+            </ul>
+            <div class="links">
+              <a class="lnk primary" href="https://www.ahlynews.com/" target="_blank" rel="noopener">ahlynews.com</a>
+            </div>
+          </div>
+        </li>
+
+      </ol>
+    </section>
+
+    <!-- ============ EVENTS ============ -->
+    <section class="sec" id="events">
+      <div class="sec-head">
+        <h2>Events organised</h2>
+        <p class="sec-sub">Federation and association events prepared and run during the EPFA years.</p>
+      </div>
+
+      <ol class="events">
+        <li class="ev">
+          <p class="ev-yr">Sep 2013</p>
+          <h3 class="ev-t">General Assembly of FIFPro Division Africa</h3>
+          <p class="ev-place">Cairo, Egypt</p>
+        </li>
+        <li class="ev">
+          <p class="ev-yr">2013-2015</p>
+          <h3 class="ev-t">The First Camp for Unregistered Players in Egypt and the Middle East</h3>
+          <p class="ev-place">Three consecutive editions</p>
+        </li>
+        <li class="ev">
+          <p class="ev-yr">2014-2015</p>
+          <h3 class="ev-t">Oscar Gala for Best Player in the Egyptian League</h3>
+          <p class="ev-place">Two editions</p>
+        </li>
+        <li class="ev">
+          <p class="ev-yr">Dec 2014</p>
+          <h3 class="ev-t">World Day of People with Special Needs</h3>
+          <p class="ev-place">Hurghada, Egypt</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="sec" id="skills">
+      <div class="sec-head">
+        <h2>Craft</h2>
+      </div>
+
+      <div class="skills">
+        <div class="sk">
+          <h3>Editorial</h3>
+          <ul>
+            <li><b>Multi-sport coverage</b><span>League, federation and tournament desks</span></li>
+            <li><b>Copy editing</b><span>Spelling, punctuation, syntax, error correction</span></li>
+            <li><b>Scripting</b><span>Digital program formats and voiceover copy</span></li>
+            <li><b>Content planning</b><span>Calendars, story and event coverage</span></li>
+          </ul>
+        </div>
+        <div class="sk">
+          <h3>Digital &amp; audience</h3>
+          <ul>
+            <li><b>Social media management</b><span>X, Instagram, TikTok, Facebook, Snapchat</span></li>
+            <li><b>SEO</b><span>Organic ranking and account visibility</span></li>
+            <li><b>Analytics-led optimisation</b></li>
+            <li><b>Readability &amp; engagement improvement</b></li>
+          </ul>
+        </div>
+        <div class="sk">
+          <h3>Production</h3>
+          <ul>
+            <li><b>Adobe Premiere</b><span>Video editing</span></li>
+            <li><b>Adobe Photoshop</b><span>Photo editing</span></li>
+            <li><b>Microsoft Office</b><span>Word, Excel, PowerPoint</span></li>
+            <li><b>Team leadership</b><span>Project coordination</span></li>
+          </ul>
+        </div>
+        <div class="sk">
+          <h3>Languages &amp; education</h3>
+          <ul>
+            <li><b>Arabic</b><span>Native</span></li>
+            <li><b>English</b><span>Excellent</span></li>
+            <li><b>B.Com, Accounting</b><span>Benha University, Egypt</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="sec contact" id="contact">
+      <div class="sec-head">
+        <h2>Get in touch</h2>
+        <p class="sec-sub">Open to strategic digital content and social media leadership roles.</p>
+      </div>
+
+      <div class="contact-main">
+        <div class="reach">
+          <span class="l">Phone</span>
+          <a class="big-link" href="tel:+201283570047">+20 128 357 0047</a>
+          <div class="copy-row">
+            <button class="copy" type="button" data-copy="+201283570047" data-done="Phone number copied to your clipboard." data-fail="Could not copy. Select the number above instead." hidden>Copy number</button>
+            <span class="copy-status" role="status" aria-live="polite"></span>
           </div>
         </div>
-      </article>
+        <div class="reach">
+          <span class="l">Email</span>
+          <a class="big-link" href="mailto:yehiagadelkarim@outlook.com">yehiagadelkarim@outlook.com</a>
+          <div class="copy-row">
+            <button class="copy" type="button" data-copy="yehiagadelkarim@outlook.com" data-done="Email address copied to your clipboard." data-fail="Could not copy. Select the address above instead." hidden>Copy address</button>
+            <span class="copy-status" role="status" aria-live="polite"></span>
+          </div>
+        </div>
+      </div>
 
-    </div>
-  </section>
+      <div class="contact-grid">
+        <div class="cc">
+          <span class="l">Based in</span>
+          <span class="v">Cairo, Egypt</span>
+        </div>
+      </div>
+    </section>
 
-  <!-- ============ EVENTS ============ -->
-  <section id="events">
-    <div class="sec-head">
-      <span class="sec-num">04</span>
-      <h2>Events organised</h2>
-    </div>
-    <p class="sec-sub">Federation and association events prepared and run during the EPFA years.</p>
-
-    <div class="events">
-      <div class="ev">
-        <div class="ev-yr">Sep 2013</div>
-        <p class="ev-t">General Assembly of FIFPro Division Africa<span>Cairo, Egypt</span></p>
-      </div>
-      <div class="ev">
-        <div class="ev-yr">2013–2015</div>
-        <p class="ev-t">The First Camp for Unregistered Players in Egypt and the Middle East<span>Three consecutive editions</span></p>
-      </div>
-      <div class="ev">
-        <div class="ev-yr">2014–2015</div>
-        <p class="ev-t">Oscar Gala for Best Player in the Egyptian League<span>Two editions</span></p>
-      </div>
-      <div class="ev">
-        <div class="ev-yr">Dec 2014</div>
-        <p class="ev-t">World Day of People with Special Needs<span>Hurghada, Egypt</span></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ SKILLS ============ -->
-  <section id="skills">
-    <div class="sec-head">
-      <span class="sec-num">05</span>
-      <h2>Craft</h2>
-    </div>
-
-    <div class="skills">
-      <div class="sk">
-        <h3>Editorial</h3>
-        <ul>
-          <li><b>Multi-sport coverage</b> — league, federation and tournament desks</li>
-          <li><b>Copy editing</b> — spelling, punctuation, syntax, error correction</li>
-          <li><b>Scripting</b> — digital program formats and voiceover copy</li>
-          <li><b>Content planning</b> — calendars, story and event coverage</li>
-        </ul>
-      </div>
-      <div class="sk">
-        <h3>Digital &amp; Audience</h3>
-        <ul>
-          <li><b>Social media management</b> — X, Instagram, TikTok, Facebook, Snapchat</li>
-          <li><b>SEO</b> — organic ranking and account visibility</li>
-          <li><b>Analytics-led optimisation</b></li>
-          <li><b>Readability &amp; engagement</b> improvement</li>
-        </ul>
-      </div>
-      <div class="sk">
-        <h3>Production</h3>
-        <ul>
-          <li><b>Adobe Premiere</b> — video editing</li>
-          <li><b>Adobe Photoshop</b> — photo editing</li>
-          <li><b>Microsoft Office</b> — Word, Excel, PowerPoint</li>
-          <li><b>Team leadership</b> &amp; project coordination</li>
-        </ul>
-      </div>
-      <div class="sk">
-        <h3>Languages &amp; Education</h3>
-        <ul>
-          <li><b>Arabic</b> — native</li>
-          <li><b>English</b> — excellent</li>
-          <li><b>B.Com, Accounting</b> — Benha University, Egypt</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CONTACT ============ -->
-  <section id="contact" class="contact">
-    <div class="sec-head">
-      <span class="sec-num">06</span>
-      <h2>Get in touch</h2>
-    </div>
-    <p class="sec-sub">Open to strategic digital content and social media leadership roles.</p>
-
-    <div class="contact-grid">
-      <div class="cc">
-        <span class="l">Email</span>
-        <a href="mailto:yehiagadelkarim@outlook.com">yehiagadelkarim@outlook.com</a>
-      </div>
-      <div class="cc">
-        <span class="l">Phone</span>
-        <a href="tel:+201283570047">+20 128 357 0047</a>
-      </div>
-      <div class="cc">
-        <span class="l">Based in</span>
-        <span>Cairo, Egypt</span>
-      </div>
-    </div>
-  </section>
+  </main>
 
   <footer>
-    <p>Yehia Ahmed Gad El-Karim — Senior Digital Content Creator &amp; Editor. Outbound links point to the official sites and channels of the outlets and programs listed; they are provided to show where the work was published.</p>
-    <p class="mono">Cairo · Updated 2026</p>
+    <p>Yehia Ahmed Gad El-Karim, Senior Digital Content Creator &amp; Editor. Outbound links point to the official sites and channels of the outlets and programs listed; they are provided to show where the work was published.</p>
+    <p class="foot-meta"><span>Cairo · Updated 2026</span><a href="#top">Back to top</a></p>
   </footer>
 
 </div>
@@ -800,11 +1009,45 @@ section{scroll-margin-top:76px}
       entries.forEach(function (e) {
         if (!e.isIntersecting) return;
         navLinks.forEach(function (a) {
-          a.classList.toggle('is-current', a.getAttribute('href') === '#' + e.target.id);
+          var on = a.getAttribute('href') === '#' + e.target.id;
+          a.classList.toggle('is-current', on);
+          if (on) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
         });
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
     targets.forEach(function (t) { navIO.observe(t); });
+  }
+
+  /* --- Copy phone / email: only offered where the Clipboard API is available --- */
+  if (navigator.clipboard && window.isSecureContext) {
+    Array.prototype.forEach.call(document.querySelectorAll('.copy[data-copy]'), function (btn) {
+      var status = btn.parentNode.querySelector('.copy-status');
+      var label = btn.textContent;
+      var timer;
+      var reset = function (delay) {
+        clearTimeout(timer);
+        timer = setTimeout(function () {
+          btn.textContent = label;
+          btn.classList.remove('is-done');
+          status.textContent = '';
+          status.classList.remove('is-error');
+        }, delay);
+      };
+      btn.hidden = false;
+      btn.addEventListener('click', function () {
+        navigator.clipboard.writeText(btn.getAttribute('data-copy')).then(function () {
+          btn.textContent = 'Copied';
+          btn.classList.add('is-done');
+          status.classList.remove('is-error');
+          status.textContent = btn.getAttribute('data-done');
+          reset(2600);
+        }, function () {
+          status.classList.add('is-error');
+          status.textContent = btn.getAttribute('data-fail');
+          reset(5000);
+        });
+      });
+    });
   }
 
   /* Everything below is decoration: skip it entirely when motion is unwelcome
@@ -813,51 +1056,53 @@ section{scroll-margin-top:76px}
   root.classList.add('anim');
   root.style.scrollBehavior = 'smooth';
 
-  /* --- Staggered reveals --- */
+  /* --- Reveals: side-by-side groups stagger, long vertical lists do not --- */
   var revealIO = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
       if (!e.isIntersecting) return;
       e.target.classList.add('in');
       revealIO.unobserve(e.target);
     });
-  }, { rootMargin: '0px 0px -6% 0px', threshold: 0.06 });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
 
-  /* Side-by-side groups get a stagger; long vertical lists do not — each of their
-     rows crosses the fold on its own, so a delay would just read as lag. */
-  var staggered = { '.pf': 1, '.prog': 1, '.sk': 1, '.contact-grid .cc': 1 };
-  var counters = {};
-  ['.sec-head', '.sec-sub', '.pf', '.prog', '.job', '.ev', '.sk', '.contact-grid .cc']
-    .forEach(function (sel) {
-      Array.prototype.forEach.call(document.querySelectorAll(sel), function (el) {
-        el.classList.add('reveal');
-        if (staggered[sel]) {
-          var i = counters[sel] || 0;
-          counters[sel] = i + 1;
-          el.style.transitionDelay = Math.min(i, 5) * 75 + 'ms';
-        }
-        revealIO.observe(el);
-      });
+  var groups = ['.figures > .fig', '.platforms > .pf', '.programs > .prog', '.events > .ev', '.skills > .sk', '.contact-grid > .cc'];
+  groups.forEach(function (sel) {
+    Array.prototype.forEach.call(document.querySelectorAll(sel), function (el, i) {
+      el.classList.add('reveal');
+      el.style.setProperty('--d', Math.min(i, 5) * 80 + 'ms');
+      revealIO.observe(el);
     });
-
-  /* --- Audience figures count up as part of the load sequence --- */
-  Array.prototype.forEach.call(document.querySelectorAll('.fig .n'), function (el, i) {
-    var parts = el.textContent.trim().match(/^(\D*)(\d+)(.*)$/);
-    if (!parts) return;
-    var prefix = parts[1], target = parseInt(parts[2], 10), suffix = parts[3];
-    var duration = 850, startedAt = null;
-    el.textContent = prefix + '0' + suffix;
-    setTimeout(function () {
-      (function frame(now) {
-        if (startedAt === null) startedAt = now;
-        var p = Math.min((now - startedAt) / duration, 1);
-        var eased = 1 - Math.pow(1 - p, 3);
-        el.textContent = prefix + Math.round(target * eased) + suffix;
-        if (p < 1) requestAnimationFrame(frame);
-      })(performance.now());
-    }, 680 + i * 90);
   });
+  Array.prototype.forEach.call(document.querySelectorAll('.lede, .sec-head, .job, .contact-main'), function (el) {
+    el.classList.add('reveal');
+    revealIO.observe(el);
+  });
+
+  /* --- Headline figures count up when they come into view --- */
+  var figs = document.querySelector('.figures');
+  if (figs) {
+    var countIO = new IntersectionObserver(function (entries) {
+      if (!entries[0].isIntersecting) return;
+      countIO.disconnect();
+      Array.prototype.forEach.call(figs.querySelectorAll('.n'), function (el, i) {
+        var parts = el.textContent.trim().match(/^(\D*)(\d+)(.*)$/);
+        if (!parts) return;
+        var prefix = parts[1], target = parseInt(parts[2], 10), suffix = parts[3];
+        var duration = 900, startedAt = null;
+        el.textContent = prefix + '0' + suffix;
+        setTimeout(function () {
+          requestAnimationFrame(function frame(now) {
+            if (startedAt === null) startedAt = now;
+            var p = Math.min((now - startedAt) / duration, 1);
+            el.textContent = prefix + Math.round(target * (1 - Math.pow(1 - p, 3))) + suffix;
+            if (p < 1) requestAnimationFrame(frame);
+          });
+        }, 120 + i * 80);
+      });
+    }, { threshold: 0.3 });
+    countIO.observe(figs);
+  }
 })();
 </script>
-<!-- ===== CONTENT END ===== -->
 </body>
 </html>
